@@ -4,7 +4,6 @@
 package businessLayer;
 import presentationLayer.AdministratorView;
 import presentationLayer.ClientView;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +14,7 @@ public class DeliveryService extends Observable implements IDeliveryServiceProce
     ArrayList<MenuItem> p=new ArrayList<>();
     HashMap<Order,ArrayList<MenuItem>> orders=new HashMap();
     protected boolean isWellFormed(){
-        return c!=null && p!=null && orders!=null;
+        return this!=null;
     }
     public DeliveryService(ArrayList<Client> c,ArrayList<MenuItem>p) {
         this.c = c;this.p = p;
