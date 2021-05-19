@@ -11,9 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -117,7 +115,7 @@ public class AdministratorView extends JFrame{
     }
     public void importP() {
         ArrayList<MenuItem>pr=new ArrayList<>();ArrayList<String> list = new ArrayList<>();
-        try (Stream<String> stream = Files.lines(Paths.get("products.csv"))) { //try cu resurse
+        try (Stream<String> stream = Files.lines(Paths.get("products.csv"))) {
             list = (ArrayList<String>) stream
                     .map(String::toUpperCase)
                     .flatMap(string -> Stream.of(string.split(",")))
@@ -157,11 +155,13 @@ public class AdministratorView extends JFrame{
                 break;
             case 4:
                 double rating=0.0; int calories=0, protein=0, fats=0, sodium=0, price=0;
+                ArrayList<MenuItem>l=new ArrayList<>();
                 for(MenuItem item:list) {
+                    l.add(item);
                     rating+=item.getRating();
                     calories+=item.getCalories();protein+=item.getProtein();fats+=item.getFats();sodium+=item.getSodium();price+=item.getPrice();
                 }
-                CompositeProduct mNouc=new CompositeProduct(name,String.valueOf(rating),String.valueOf(calories),String.valueOf(protein),String.valueOf(fats),String.valueOf(sodium),String.valueOf(price));
+                CompositeProduct mNouc=new CompositeProduct(name,String.valueOf(rating),String.valueOf(calories),String.valueOf(protein),String.valueOf(fats),String.valueOf(sodium),String.valueOf(price),l);
                 s.getD().getP().add(mNouc);
         }
     }

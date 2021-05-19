@@ -14,7 +14,10 @@ public class DeliveryService extends Observable implements IDeliveryServiceProce
     ArrayList<MenuItem> p=new ArrayList<>();
     HashMap<Order,ArrayList<MenuItem>> orders=new HashMap();
     protected boolean isWellFormed(){
-        return this!=null;
+        if( this!=null && p!=null && c!=null)
+            return true;
+        else
+            return false;
     }
     public DeliveryService(ArrayList<Client> c,ArrayList<MenuItem>p) {
         this.c = c;this.p = p;

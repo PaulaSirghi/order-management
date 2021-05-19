@@ -15,7 +15,7 @@ public class MainClass {
         MainView m=new MainView();
         ArrayList<Client> c=new ArrayList<>();
         DeliveryService dl=new DeliveryService(c,new ArrayList<>());
-      /* Serializator s=new Serializator(dl);
+       /*Serializator s=new Serializator(dl);
 
 
         try {

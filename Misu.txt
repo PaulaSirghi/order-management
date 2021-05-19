@@ -1,4 +1,3 @@
-produs: CORN AND TASSO MAQUE CHOUX 
-produs: GRAPE AND WALNUT SWEET FOCACCIA 
-The total price is 141
-18-05-2021 21:31:41
+produs: FRESH CORN TORTILLAS 
+The total price is 79
+19-05-2021 16:21:24
